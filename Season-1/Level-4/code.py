@@ -93,7 +93,7 @@ class DB_CRUD_ops(object):
             res += "[QUERY] " + query + "\n"
 
             # a block list (aka restricted characters) that should not exist in user-supplied input
-            restricted_chars = ";%&^!#-"
+            restricted_chars = ";%&^!#-()[]{}\"\\"
             # checks if input contains characters from the block list
             has_restricted_char = any([char in query for char in restricted_chars])
             # checks if input contains a wrong number of single quotes against SQL injection
