@@ -17,12 +17,11 @@ class Random_generator:
     'abcdefghijklmnopqrstuvwxyz'
     'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     )):
-        return ''.join(random.choice(alphabet) for _ in range(length))
+        return ''.join(secrets.choice(alphabet) for _ in range(length))
 
     # generates salt
     def generate_salt(self, rounds=12):
-        salt = ''.join(str(random.randint(0, 9)) for _ in range(21)) + '.'
-        return f'$2b${rounds}${salt}'.encode()
+        return bcrypt.gensalt(rounds)
 
 class SHA256_hasher:
 
