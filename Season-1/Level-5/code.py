@@ -50,7 +50,7 @@ class MD5_hasher:
 # a collection of sensitive secrets necessary for the software to operate
 PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
 PUBLIC_KEY = os.environ.get('PUBLIC_KEY')
-SECRET_KEY = 'TjWnZr4u7x!A%D*G-KaPdSgVkXp2s5v8'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 PASSWORD_HASHER = 'MD5_hasher'
 
 
